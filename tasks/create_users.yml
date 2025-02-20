@@ -1,0 +1,6 @@
+---
+- name: Benutzer anlegen
+  user:
+    name: "{{item.name}}"
+    state: present
+  loop: "{{users}}"

@@ -1,0 +1,19 @@
+---
+- hosts: nginx_servers
+  become: true
+  vars_files:
+    - vars/users.yml
+  tasks:
+    - import_tasks: tasks/update_system.yml  
+    - import_tasks: tasks/install_htpasswd.yml
+    - import_tasks: tasks/setup_nginx.yml
+    - import_tasks: tasks/create_users.yml
+    - import_tasks: tasks/secure_vip_pages.yml
+    - import_tasks: tasks/generate_pages.yml
+    - import_tasks: tasks/monitor_nginx.yml
+    - import_tasks: tasks/setup_nginx_monitoring_cron.yml
+
+  handlers:
+    - import_tasks: handlers/main.yml
+
+

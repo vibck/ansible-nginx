@@ -1,0 +1,6 @@
+{% if item.position == "Boss" %}
+<h1>Willkommen auf der VIP-Seite von {{ item.name }}</h1>
+<p>Hier gibt es exklusive Inhalte!</p>
+{% else %}
+<h1>Das ist die Seite von {{ item.name }}</h1>
+{% endif %}

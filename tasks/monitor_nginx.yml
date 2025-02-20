@@ -1,0 +1,10 @@
+---
+- name: Überprüfe Nginx Status
+  shell: systemctl is-active nginx
+  register: nginx_status
+
+- name: Starte Nginx neu falls es nicht läuft
+  service:
+    name: nginx
+    state: restarted
+  when: nginx_status.stdout != "active"

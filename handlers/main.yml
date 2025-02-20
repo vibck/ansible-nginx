@@ -1,0 +1,5 @@
+---
+- name: Nginx neu laden
+  service:
+    name: nginx
+    state: reloaded

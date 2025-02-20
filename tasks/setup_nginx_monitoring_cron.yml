@@ -1,0 +1,7 @@
+---
+- name: Erstelle einen Cron-Job zur regelmäßigen Überprüfung von Nginx
+  cron:
+    name: "Überwache Nginx-Dienst"
+    minute: "*/5"  
+    job: "/usr/bin/ansible-playbook /home/viktorbeck/ansible-nginx/tasks/monitor_nginx.yml"  
+    user: root  

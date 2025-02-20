@@ -1,0 +1,6 @@
+---
+- name: Erstelle .htpasswd für Boss-Benutzer mit vordefinierten Passwörtern
+  command: htpasswd -cb /etc/nginx/.htpasswd {{ item.name }} {{ item.password }}
+  loop: "{{ users }}"
+  when: item.position == 'Boss'
+  notify: Nginx neu laden
