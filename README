@@ -1,0 +1,20 @@
+# Ansible Nginx Setup
+
+Dies ist ein Ansible-Projekt zum Setup und zur Verwaltung von Nginx-Webservern. Es automatisiert die Konfiguration von Nginx, das Erstellen von Benutzerseiten und die Absicherung bestimmter Seiten mit Basic Authentication.
+
+## Inhalt
+
+- **Playbook**: `playbook.yml` – Haupt-Playbook, das alle Tasks ausführt.
+- **Tasks**: Verschiedene Tasks zum Installieren von Paketen, Konfigurieren von Nginx, Erstellen von Benutzerseiten und mehr.
+- **Handlers**: Reagiert auf Events (z.B. Nginx neu laden).
+- **Templates**: Vorlagen für die Benutzerseiten und Nginx-Konfiguration.
+- **Vars**: Variablen wie Benutzer und Passwörter.
+
+## Voraussetzungen
+
+- **Betriebssystem**: Ein Ubuntu- oder Debian-basiertes System wird vorausgesetzt, da das Playbook die `apt`-Paketverwaltung verwendet.
+- **Ansible**: Ansible muss auf der Steuermaschine (deinem lokalen System) installiert sein. Wenn du Ansible noch nicht installiert hast, kannst du es mit folgenden Befehlen installieren:
+
+  ```bash
+  sudo apt update
+  sudo apt install ansible
